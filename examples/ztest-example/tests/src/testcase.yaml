@@ -1,0 +1,7 @@
+tests:
+  ztest-example.ubx_checksum: # <project>.<testname>
+    tags: ubx_checksum        # tag zur Kategoriesierung und Filterung
+    type: unit                # unit test -> runs on host
+    extra_args:               # Build Argumente für CMake
+    # add -g to allow debugging in vscode
+      - EXTRA_CPPFLAGS="-g"

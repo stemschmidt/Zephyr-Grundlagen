@@ -6,14 +6,14 @@
     "showDevDebugOutput": true,
     "configurations": [
         {
-            "name": "Debug Mutex",
+            "name": "Debug Hello World",
             "type": "cortex-debug",
             "request": "launch",
             "servertype": "external",
-            "gdbTarget": "127.0.0.1:2331",
+            "gdbTarget": "localhost:2331",
             "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
             "cwd": "${workspaceFolder}",
-            "executable": "kernel/mutex/build/merged.hex",
+            "executable": "examples/hello-world/build/merged.hex",
             "interface": "swd",
             "device": "nRF54L15_M33",
             "overrideLaunchCommands": [
@@ -25,21 +25,21 @@
                 "monitor reset 0"
             ],
             "postLaunchCommands": [
-                "file kernel/mutex/build/mutex/zephyr/zephyr.elf"
+                "file examples/hello-world/build/hello-world/zephyr/zephyr.elf"
             ],
             "rtos": "Zephyr",
             "showDevDebugOutput": "none",
             "runToEntryPoint": "main"
         },
         {
-            "name": "Debug peripheral lbs",
+            "name": "Debug Mutex",
             "type": "cortex-debug",
             "request": "launch",
             "servertype": "external",
-            "gdbTarget": "host.docker.internal:2331",
+            "gdbTarget": "localhost:2331",
             "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
             "cwd": "${workspaceFolder}",
-            "executable": "nrf/samples/bluetooth/peripheral_lbs/build/merged.hex",
+            "executable": "examples/kernel/mutex/build/merged.hex",
             "interface": "swd",
             "device": "nRF54L15_M33",
             "overrideLaunchCommands": [
@@ -51,11 +51,241 @@
                 "monitor reset 0"
             ],
             "postLaunchCommands": [
-                "file nrf/samples/bluetooth/peripheral_lbs/build/peripheral_lbs/zephyr/zephyr.elf"
+                "file examples/kernel/mutex/build/mutex/zephyr/zephyr.elf"
             ],
             "rtos": "Zephyr",
             "showDevDebugOutput": "none",
             "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug Semaphore",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "examples/kernel/semaphore/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file examples/kernel/semaphore/build/semaphore/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug Lauflicht-Superloop",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "examples/lauflicht-superloop/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file examples/lauflicht-superloop/build/lauflicht-superloop/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug Lauflicht-Threads",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "examples/lauflicht-threads/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file examples/lauflicht-threads/build/lauflicht-threads/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug PWM LED",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "zephyr/samples/drivers/led/pwm/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file zephyr/samples/drivers/led/pwm/build/pwm/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug Uart echo_bot",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "zephyr/samples/drivers/uart/echo_bot/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file zephyr/samples/drivers/uart/echo_bot/build/echo_bot/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug Lauflicht-Interrupt",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "examples/lauflicht-interrupt/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file examples/lauflicht-interrupt/build/lauflicht-interrupt/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug Lauflicht-Input",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "gdbTarget": "localhost:2331",
+            "svdFile": "modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd",
+            "cwd": "${workspaceFolder}",
+            "executable": "examples/lauflicht-input/build/merged.hex",
+            "interface": "swd",
+            "device": "nRF54L15_M33",
+            "overrideLaunchCommands": [
+                "monitor reset 0",
+                "-target-download",
+                "monitor reset 0"
+            ],
+            "overrideResetCommands": [
+                "monitor reset 0"
+            ],
+            "postLaunchCommands": [
+                "file examples/lauflicht-input/build/lauflicht-input/zephyr/zephyr.elf"
+            ],
+            "rtos": "Zephyr",
+            "showDevDebugOutput": "none",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "Debug native-sim",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/hello-world/build/zephyr/zephyr.exe",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug ztest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/twister-out/unit_testing_unit_testing/host/examples/ztest-example/tests/src/ztest-example.ubx_checksum/testbinary",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }
