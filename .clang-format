@@ -1,0 +1,51 @@
+---
+Language: Cpp
+BasedOnStyle: LLVM
+
+# indentation
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+
+# line length
+ColumnLimit: 100
+
+# braces (MISRA projects usually prefer Allman)
+BreakBeforeBraces: Allman
+BraceWrapping:
+  AfterFunction: true
+  AfterControlStatement: Always
+  AfterStruct: true
+  AfterEnum: true
+  AfterUnion: true
+  BeforeElse: true
+  BeforeCatch: true
+
+# avoid single line constructs
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortCaseLabelsOnASingleLine: false
+
+# switch formatting
+IndentCaseLabels: true
+
+# pointers and references
+PointerAlignment: Right
+
+# spaces
+SpaceAfterCStyleCast: true
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# includes
+SortIncludes: false
+
+# keep macros predictable
+IndentPPDirectives: None
+
+# function parameters
+BinPackParameters: false
+BinPackArguments: false
+AlignAfterOpenBracket: DontAlign

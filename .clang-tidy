@@ -1,0 +1,52 @@
+---
+Checks: >
+  bugprone-*,
+  clang-analyzer-*,
+  cert-*,
+  readability-*,
+  portability-*,
+  performance-*,
+  -readability-magic-numbers,
+  -readability-identifier-length,
+  -performance-no-int-to-ptr
+
+WarningsAsErrors: ''
+
+HeaderFilterRegex: '.*'
+
+AnalyzeTemporaryDtors: false
+
+CheckOptions:
+
+  - key: readability-function-size.LineThreshold
+    value: '80'
+
+  - key: readability-function-size.StatementThreshold
+    value: '50'
+
+  - key: readability-function-size.BranchThreshold
+    value: '10'
+
+  - key: readability-function-size.ParameterThreshold
+    value: '5'
+
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+
+  - key: readability-identifier-naming.ConstantCase
+    value: UPPER_CASE
+
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+
+  - key: readability-identifier-naming.StructCase
+    value: lower_case
+
+  - key: readability-identifier-naming.EnumCase
+    value: lower_case
+
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
