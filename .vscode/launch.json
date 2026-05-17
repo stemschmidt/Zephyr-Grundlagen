@@ -243,7 +243,7 @@
             "name": "Debug native-sim",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/examples/hello-world/build/zephyr/zephyr.exe",
+            "program": "${workspaceFolder}/examples/hello-world/build/hello-world/zephyr/zephyr.exe",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
