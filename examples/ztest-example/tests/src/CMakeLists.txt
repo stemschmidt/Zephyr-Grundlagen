@@ -1,7 +1,7 @@
 # Set minimum CMake version
 cmake_minimum_required(VERSION 3.20.0)
 
-find_package(Zephyr COMPONENTS unittest REQUIRED HINTS $ENV{ZEPHYR_BASE})
+find_package(Zephyr COMPONENTS unittest REQUIRED)
 
 project(ubx_checksum)
 
