@@ -132,7 +132,7 @@ static void key_press(struct input_event *evt, void *user_data)
             }
             break;
         default:
-            printk("unbekannter Button3\n");
+            printk("unbekannter Button\n");
             break;
     }
 }
